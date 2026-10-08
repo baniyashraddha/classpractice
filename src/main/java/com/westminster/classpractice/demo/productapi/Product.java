@@ -3,14 +3,23 @@ package com.westminster.classpractice.demo.productapi;
 public class Product {
     private int id;
     private String name;
-    private double price;
+    private int qty;
+    private boolean inStock;
+    private double unitPrice;
 
-    public Product(int id, String name, double price) {
+    public Product(int id, String name, int qty, boolean inStock, double unitPrice) {
         this.id = id;
         this.name = name;
-        this.price = price;
+        this.qty = qty;
+        this.inStock = inStock;
+        this.unitPrice = unitPrice;
     }
-    public String getPrice() {
-        return "The price of " + name + " is " + price;
+
+    public int getId() {
+        return this.id;
+    }
+
+    public int getQty() {
+        return this.qty;
     }
 }
