@@ -2,26 +2,31 @@
 //
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RestController;
+//
+//import java.time.LocalDate;
+//import java.time.Month;
+//import java.time.Period;
 //
 //@RestController
 //public class HelloController {
-//    @GetMapping("/api/product")
-//    public String product() {
-//        Product product = new Product(1011, "Laptop", 99);
-//        return product.getPrice();
-//    }
-//    @GetMapping("/api/address/{city}")
-//    public String getFullAddress(@PathVariable String city) {
-//        Address address = new Address(109, "Home", "Bagmati", city, "Nepal");
+//
+//    @GetMapping("/getAddress/{city}")
+//    public String getAddress(@PathVariable String city) {
+//        Address address = new Address(222, city, "bagmati", "nepal");
+//
 //        return address.getFullAddress();
 //    }
-//    @GetMapping("/api/person")
-//    public String person() {
-//        Person person = new Person(23, "shraddha", "88");
-//        return person.getAge();
+//
+//    @GetMapping("/")
+//    public String hello() {
+//        return "Hello World";
 //    }
 //
+//    @GetMapping("/person-age")
+//    public String personAge(@RequestParam int year, @RequestParam int month, @RequestParam int day) {
+//        Person person = new Person(123, "Ram Bahadur Karki", LocalDate.of(year, month, day));
+//        return person.calculateAge();
+//    }
 //}
-
-
