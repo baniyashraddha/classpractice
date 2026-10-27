@@ -9,13 +9,13 @@ import java.util.Optional;
 @Service
 public class ProductService {
     private final List<Product> products = new ArrayList<>();
-    private int nextId = 1;
+    private long nextId = 1;
 
     public List<Product> getAllProducts() {
         return products;
     }
 
-    public Optional<Product> getProductById(int id) {
+    public Optional<Product> getProductById(long id) {
         return products.stream().filter(p -> p.getId() == id).findFirst();
     }
 
@@ -32,7 +32,7 @@ public class ProductService {
         return product;
     }
 
-    public void deleteProduct(int id) {
+    public void deleteProduct(long id) {
         products.removeIf(p -> p.getId() == id);
     }
 }
