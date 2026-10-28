@@ -89,11 +89,28 @@ public class Product {
         this.price = price;
     }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public double getPrice() { return price; }
+    public Long getId() {
+        return id;
+    }
+    public String getName() {
 
-    public void setId(Long id) { this.id = id; }
-    public void setName(String n) { this.name = n; }
-    public void setPrice(double p) { this.price = p; }
+        return name;
+    }
+    public double getPrice() {
+
+        return price;
+    }
+
+    public void setId(Long id) {
+
+        this.id = id;
+    }
+    public void setName(String n) {
+
+        this.name = n;
+    }
+    public void setPrice(double p) {
+
+        this.price = p;
+    }
 }

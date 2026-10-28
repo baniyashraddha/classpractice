@@ -24,8 +24,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public Product getById(@PathVariable int id) {
-        return productService.getProductById(id)
-                .orElse(null); // Lecture 6
+        return productService.getProductById(id).orElse(null); // Lecture 6
     }
 
     @PostMapping("/")
