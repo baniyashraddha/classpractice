@@ -9,13 +9,13 @@ import java.util.Optional;
 @Service
 public class ProductService {
     private final List<Product> products = new ArrayList<>();
-    private long nextId = 1;
+    private int nextId = 1;
 
     public List<Product> getAllProducts() {
         return products;
     }
 
-    public Optional<Product> getProductById(long id) {
+    public Optional<Product> getProductById(int id) {
         return products.stream().filter(p -> p.getId() == id).findFirst();
     }
 
@@ -25,9 +25,10 @@ public class ProductService {
     }
 
     public Product addProduct(Product product) {
-        DigitalProduct dp = new DigitalProduct(
-                2L,
-                "DigitalProduct",
+        DigitalProduct dp = new DigitalProduct(112,
+                "Digital Product",
+                2,
+                true,
                 34.99,
                 "http://xsdfa.com/file/3434",
                 23.33);
@@ -39,18 +40,20 @@ public class ProductService {
     }
 
     public List<Product> addGetInheritedProduct() {
-        DigitalProduct dp = new DigitalProduct(
-                2L,
-                "DigitalProduct",
+        DigitalProduct dp = new DigitalProduct(112,
+                "Digital Product",
+                2,
+                true,
                 34.99,
                 "http://xsdfa.com/file/3434",
                 23.33);
-        PhysicalProduct physicalProduct = new PhysicalProduct(
-                2L,
-                "DigitalProduct",
-                34.99,
-                4.08,
-                "23x54");
+        PhysicalProduct physicalProduct = new PhysicalProduct(122,
+                "Physical Product",
+                3,
+                true,
+                11.99,
+                3.09,
+                "20x10");
         products.add(dp);
         products.add(physicalProduct);
         return this.products;

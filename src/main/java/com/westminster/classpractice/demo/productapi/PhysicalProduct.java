@@ -4,25 +4,27 @@ public class PhysicalProduct extends Product {
     private double weightKg;
     private String dimensions;
 
-    public PhysicalProduct() { }
+    public PhysicalProduct() {
+    }
 
     public PhysicalProduct(
-
-            Long id,
+            int id,
             String name,
-            double price,
+            int qty,
+            boolean inStock,
+            double unitPrice,
             double weightKg,
             String dimensions) {
 
-        super(id, name, price);
+        super(id, name, qty, inStock, unitPrice);
         this.weightKg = weightKg;
         this.dimensions = dimensions;
     }
 
     public double getWeightKg() {
-        return weightKg;
+        return this.weightKg;
     }
     public String getDimensions() {
-        return dimensions;
+        return this.dimensions;
     }
 }

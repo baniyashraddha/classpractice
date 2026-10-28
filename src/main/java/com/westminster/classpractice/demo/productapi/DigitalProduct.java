@@ -4,25 +4,24 @@ public class DigitalProduct extends Product {
     private String downloadUrl;
     private double fileSizeMB;
 
-    public DigitalProduct() { }
-
     public DigitalProduct(
-            Long id,
+            int id,
             String name,
-            double price,
+            int qty,
+            boolean inStock,
+            double unitPrice,
             String downloadUrl,
             double fileSizeMB) {
 
-        super(id, name, price);
+        super(id, name, qty, inStock, unitPrice);
         this.downloadUrl = downloadUrl;
         this.fileSizeMB = fileSizeMB;
     }
-
     public String getDownloadUrl() {
-
-        return downloadUrl;
+        return this.downloadUrl;
     }
+
     public double getFileSizeMB() {
-        return fileSizeMB;
+        return this.fileSizeMB;
     }
 }
