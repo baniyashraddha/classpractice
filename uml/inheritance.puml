@@ -11,6 +11,7 @@ class DigitalProduct {
 - downloadUrl : String
 - fileSizeMB : double
 + getDownloadUrl() : String
+
 }
 class PhysicalProduct {
 - weightKg : double
