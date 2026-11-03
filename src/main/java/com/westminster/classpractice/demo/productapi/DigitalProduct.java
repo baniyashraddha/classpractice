@@ -1,8 +1,9 @@
 package com.westminster.classpractice.demo.productapi;
 
-public class DigitalProduct extends Product {
+public class DigitalProduct extends Product implements Discountable{
     private String downloadUrl;
     private double fileSizeMB;
+    double discountedPrice;
 
     public DigitalProduct(
             int id,
@@ -28,5 +29,15 @@ public class DigitalProduct extends Product {
     @Override
     public String getSummary() {
         return this.getName() + " — £" + this.downloadUrl;
+    }
+
+    @Override
+    public void applyDiscount(double rate) {
+        discountedPrice = getUnitPrice() * (1-rate);
+    }
+
+    @Override
+    public double getDiscountedPrice() {
+        return discountedPrice;
     }
 }
